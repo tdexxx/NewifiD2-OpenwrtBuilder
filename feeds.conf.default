@@ -21,6 +21,9 @@ src-git passwall https://github.com/xiaorouji/openwrt-passwall
 #vssr
 #src-git vssr https://github.com/jerrykuku/luci-app-vssr
 
+src-git netspeedtest https://github.com/sirpdboy/NetSpeedTest
+
+src-git ua2fluci https://github.com/lucikap/luci-app-ua2f
 
 #src-git video https://github.com/openwrt/video.git
 #src-git targets https://github.com/openwrt/targets.git
