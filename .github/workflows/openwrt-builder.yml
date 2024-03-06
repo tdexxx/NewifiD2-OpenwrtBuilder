@@ -27,7 +27,7 @@ env:
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
-  UPLOAD_RELEASE: false
+  UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
 
 jobs:
@@ -140,7 +140,7 @@ jobs:
       uses: softprops/action-gh-release@master
       if: steps.tag.outputs.status == 'success' && !cancelled()
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
       with:
         tag_name: ${{ steps.tag.outputs.release_tag }}
         name: ${{ steps.tag.outputs.release_tag }}
@@ -160,4 +160,4 @@ jobs:
         keep_latest: 3
         delete_tags: true
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
